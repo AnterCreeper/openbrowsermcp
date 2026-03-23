@@ -1,0 +1,13 @@
+[Unit]
+Description=Control Chrome from any MCP-compatible AI agent via a local WebSocket bridge and the Model Context Protocol.
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/hp/openbrowsermcp
+ExecStart=pnpm --filter server start
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=graphical-session.target
